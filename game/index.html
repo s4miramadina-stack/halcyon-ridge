@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Halcyon Ridge — bush flying in the Kestrel K-2</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="view"></canvas>
+  <canvas id="hud"></canvas>
+
+  <section id="screen-title" class="screen">
+    <div class="panel wide">
+      <h1>HALCYON <span>RIDGE</span></h1>
+      <p class="tag">Bush flying in the Kestrel K-2 over the Halcyon river valley</p>
+      <div id="mission-list"></div>
+      <div class="help">
+        <div><b>W/S</b> pitch · <b>A/D</b> roll · <b>Q/E</b> rudder · or hold the left mouse button and steer</div>
+        <div><b>Shift/Ctrl</b> or <b>wheel</b> throttle · <b>1–9, 0</b> throttle steps · <b>F</b> flaps · <b>B/Space</b> brakes</div>
+        <div><b>C</b> chase / cockpit · <b>P</b> pause · <b>R</b> restart · <b>M</b> sound</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-brief" class="screen hidden">
+    <div class="panel">
+      <h2 id="brief-name"></h2>
+      <p id="brief-text"></p>
+      <p class="kv">FUEL ON BOARD <b id="brief-fuel"></b></p>
+      <p class="hint">Rotate at 55 kt, climb at 65 kt. Land below 2 m/s sink with the wings level for a smooth grade.</p>
+      <div class="row">
+        <button id="btn-back" class="ghost">BACK</button>
+        <button id="btn-launch">TAKE OFF ▸</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-pause" class="screen hidden">
+    <div class="panel">
+      <h2>PAUSED</h2>
+      <div class="row">
+        <button id="btn-quit" class="ghost">MISSIONS</button>
+        <button id="btn-resume">RESUME</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-result" class="screen hidden">
+    <div class="panel">
+      <h2 id="result-title"></h2>
+      <p id="result-text"></p>
+      <p id="result-score" class="score"></p>
+      <div class="row">
+        <button id="btn-menu" class="ghost">MISSIONS</button>
+        <button id="btn-retry">FLY AGAIN</button>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
